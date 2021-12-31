@@ -11,7 +11,16 @@ When looking at the results of the June and December data, we can see these thre
 * The highest temperature it has gotten in June is 85 degrees and the lowest is 64 degrees
 * The highest temperaure for December is 83 degrees and the lowest is 56 degrees
 
-Fig. 1: June Summary 
+![jun](https://github.com/julianneitliong/surfs_up/blob/0dfa9acafd945894261ceab0e993eeceada0e251/june.png)
+![dec](https://github.com/julianneitliong/surfs_up/blob/0dfa9acafd945894261ceab0e993eeceada0e251/dec.png)
 
+### Summary
+Looking at the two summary statistic dataframes for June and December temperatures, we can see there is not an extreme difference in the two months' average temperatures. Because of this low variance between the two months' average temperatures, customers will still be interested in purchasing ice cream in both the summer months and winter months. 
 
-Fig. 2: December Summary
+Two additional queries I would use is to look at the precipitation data for both of those months. Even though the average temperature for the two months stay consistent, understanding how much it rains may be helpful in predicting if there will be customers out surfing or interested in purchasing ice cream when it rains. 
+
+#### June Precipitation Data
+june_rain = session.query(Measurement.date, Measurement.prcp).filter(extract("month", Measurement.date) == "6").all()
+
+#### Dec Precipitation Data
+dec_rain = session.query(Measurement.date, Measurement.prcp).filter(extract("month", Measurement.date) == "12").all()
