@@ -19,8 +19,8 @@ Looking at the two summary statistic dataframes for June and December temperatur
 
 Two additional queries I would use is to look at the precipitation data for both of those months. Even though the average temperature for the two months stay consistent, understanding how much it rains may be helpful in predicting if there will be customers out surfing or interested in purchasing ice cream when it rains. 
 
-#### June Precipitation Data
+### June Precipitation Data
 june_rain = session.query(Measurement.date, Measurement.prcp).filter(extract("month", Measurement.date) == "6").all()
 
-#### Dec Precipitation Data
+### Dec Precipitation Data
 dec_rain = session.query(Measurement.date, Measurement.prcp).filter(extract("month", Measurement.date) == "12").all()
